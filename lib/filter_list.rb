@@ -1,3 +1,3 @@
-def filter_list(array) 
-  array
+def filter_list(array)
+  array.include?("hello") ? nil : array
 end
