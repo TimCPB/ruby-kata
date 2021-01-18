@@ -6,8 +6,8 @@ describe 'filter_list' do
     expect(filter_list([1,2])).to eq [1,2]
   end
 
-  it "does not return an array when it is anthing other than intergers" do
-    expect(filter_list(["hello"])).to eq nil
+  it "filters out the strings and only returns the integers" do
+    expect(filter_list([1, "hello"])).to eq [1]
   end
 
 end
