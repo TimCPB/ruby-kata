@@ -1,5 +1,9 @@
 def find_outlier(array)
-  array.each do |num|
-    return num if num % 2 != 0
+  even_num_count = 0
+  array.each { |num| even_num_count += 1 if num.even? }
+  if even_num_count == 1
+    array.each { |num| return num if num.even? }
+  else
+    array.each { |num| return num if num.odd? }
   end
 end
