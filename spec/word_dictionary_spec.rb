@@ -29,9 +29,9 @@ describe WordDictionary do
       expect(@wd.search('b')).to eq(false)
     end
 
-    # it 'can substitute a letter in a matching word for a period' do
-    #   expect(@wd.search())
-    # end
+    it 'can substitute a letter in a matching word for a period' do
+      expect(@wd.search('c.dew.ars')).to eq(true)
+    end
 
     describe '#compare_with_periods' do
       it 'returns true with substituted letters' do
