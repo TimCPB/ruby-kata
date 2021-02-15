@@ -2,21 +2,27 @@
 
 require 'word_dictionary'
 
-describe "word dictionary" do
+describe WordDictionary do
   before(:each) do
     @wd = WordDictionary.new
+    @wd.add_word('a')
+    @wd.add_word('cod')
+    @wd.add_word('code')
+    @wd.add_word('codewars')
   end
 
   it 'initializes with an empty dictionary' do
-    expect(@wd.dictionary).to eq([])
+    expect(subject.dictionary).to eq([])
   end
 
   describe '#add_word' do
     it 'adds a word to the dictionary' do
-      @wd.add_word('cod')
-      @wd.add_word('code')
-      @wd.add_word('codewars')
-      expect(@wd.dictionary).to include('cod', 'code', 'codewars')
+      @wd.add_word('hello')
+      expect(@wd.dictionary).to include('hello')
     end
   end
+
+  # describe '#search' do
+  #   it ''
+  # end
 end
