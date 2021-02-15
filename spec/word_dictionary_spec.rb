@@ -28,5 +28,16 @@ describe WordDictionary do
       expect(@wd.search('code')).to eq(true)
       expect(@wd.search('b')).to eq(false)
     end
+
+    # it 'can substitute a letter in a matching word for a period' do
+    #   expect(@wd.search())
+    # end
+
+    describe '#compare_with_periods' do
+      it 'returns true with substituted letters' do
+        expect(@wd.compare_with_periods('cod.', 'code')).to eq(true)
+        expect(@wd.compare_with_periods('cod..', 'code')).to eq(false)
+      end
+    end
   end
 end
