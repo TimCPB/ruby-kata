@@ -36,7 +36,7 @@ describe WordDictionary do
     describe '#compare_with_periods' do
       it 'returns true with substituted letters' do
         expect(@wd.compare_with_periods('cod.', 'code')).to eq(true)
-        expect(@wd.compare_with_periods('cod..', 'code')).to eq(false)
+        expect(@wd.compare_with_periods('cod.r', 'code')).to eq(false)
       end
     end
   end
