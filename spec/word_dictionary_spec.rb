@@ -23,8 +23,9 @@ describe WordDictionary do
   end
 
   describe '#search' do
-    it 'searches for a matching single letter' do
+    it 'searches for a matching complete word' do
       expect(@wd.search('a')).to eq(true)
+      expect(@wd.search('code')).to eq(true)
       expect(@wd.search('b')).to eq(false)
     end
   end

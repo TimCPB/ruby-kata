@@ -10,4 +10,8 @@ class WordDictionary
   def add_word(word)
     @dictionary.push(word)
   end
+
+  def search(word)
+    @dictionary.include?(word)
+  end
 end
