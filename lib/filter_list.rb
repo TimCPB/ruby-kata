@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 def filter_list(array)
   filtered_list = []
 
-  array.each {|element|filtered_list.push(element) if element.is_a?(Integer) }
+  array.each { |element| filtered_list.push(element) if element.is_a?(Integer) }
 
-  return filtered_list
+  filtered_list
 end
 
 # to review array methods

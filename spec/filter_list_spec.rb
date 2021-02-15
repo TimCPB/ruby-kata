@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # require 'filter_list'
 
 # describe 'filter_list' do
