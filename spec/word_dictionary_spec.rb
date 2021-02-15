@@ -22,7 +22,10 @@ describe WordDictionary do
     end
   end
 
-  # describe '#search' do
-  #   it ''
-  # end
+  describe '#search' do
+    it 'searches for a matching single letter' do
+      expect(@wd.search('a')).to eq(true)
+      expect(@wd.search('b')).to eq(false)
+    end
+  end
 end
