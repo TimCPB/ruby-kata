@@ -12,17 +12,24 @@ class WordDictionary
   end
 
   def search(word)
-    @dictionary.include?(word)
+    @dictionary.each { |entry| return true if compare_with_periods(word, entry) }
+    false
   end
+
+private
 
   def compare_with_periods(word1, word2)
     array1 = word1.split('')
     array2 = word2.split('')
-    array1.map.with_index do |letter, i|
-      if (letter == array2[i] || letter == '.')
-        letter
-      end
+    new_array1 = array1.map.with_index { |letter, i| return_subbed_letter(letter, array2, i) }
+    new_array1 == array2
+  end
+
+  def return_subbed_letter(letter, array, n)
+    if (letter == array[n])
+      letter
+    elsif (letter == '.')
+      array[n]
     end
-    array1.length == array2.length
   end
 end
